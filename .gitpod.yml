@@ -1,0 +1,15 @@
+image: jelaniwoods/appdev2021-dashboards@sha256:eb2ba816417c68fe96789c2aaaa901efd46b89c66ddb52ece8483b4ae0593bdb
+
+tasks:
+  - command: bundle install
+  - init: bin/setup
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - shd101wyy.markdown-preview-enhanced
+    - wingrunr21.vscode-ruby
+    - mbessey.vscode-rufo
+    - aliariff.vscode-erb-beautify
