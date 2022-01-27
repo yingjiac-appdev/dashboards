@@ -1,15 +1,16 @@
-image: jelaniwoods/appdev2021-dashboards@sha256:a3a2dd09a979e24c985b088310b7efc28cdb3f21e85ad8f155272bc71bbeba50
+image: patrickmckernin/dashboards22w
 
 tasks:
-  - command: bundle install
   - init: bin/setup
 ports:
   - port: 3000
     onOpen: open-preview
+  - port: 9515
+    onOpen: ignore
+
 
 vscode:
   extensions:
-    - shd101wyy.markdown-preview-enhanced
-    - wingrunr21.vscode-ruby
+    - vortizhe.simple-ruby-erb
     - mbessey.vscode-rufo
     - aliariff.vscode-erb-beautify
