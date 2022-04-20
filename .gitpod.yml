@@ -1,16 +1,17 @@
-image: patrickmckernin/dashboards22w
+image: patrickmckernin/dashboards2022spring
 
 tasks:
-  - init: bin/setup
+  - before: |
+      cp -r /base-rails/gems/ruby vendor/bundle
+      bundle config set --local path 'vendor/bundle'
+      rails db:create db:migrate
+      rails db:seed
 ports:
   - port: 3000
     onOpen: open-preview
-  - port: 9515
-    onOpen: ignore
-
 
 vscode:
-  extensions:
+    extensions:
     - vortizhe.simple-ruby-erb
     - mbessey.vscode-rufo
     - aliariff.vscode-erb-beautify
