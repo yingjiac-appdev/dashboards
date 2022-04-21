@@ -2,10 +2,7 @@ image: patrickmckernin/dashboards2022spring
 
 tasks:
   - before: |
-      cp -r /base-rails/gems/ruby vendor/bundle
-      bundle config set --local path 'vendor/bundle'
-      rails db:create db:migrate
-      rails db:seed
+      bin/setup
 ports:
   - port: 3000
     onOpen: open-preview
